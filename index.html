@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Simple todo list!" />
+        <title>To-do list</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/styles//styles.css" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+        <script src="/scripts/app.js" defer></script>
+    </head>
+    <body>
+        <header></header>
+        <main id="todos-app">
+            <section id="todo-input">
+                <form @submit="saveTodo">
+                    <label for="task">Task</label>
+                    <textarea
+                        rows="1"
+                        id="task"
+                        v-model="enteredTask"
+                    ></textarea>
+                    <button id="submit-task">Save</button>
+                </form>
+            </section>
+            <div id="tasks-container">
+                <p v-if="todos.length === 0">You have no tasks yet. Please add new task</p>
+                <article v-else v-for="todo in todos">
+                    <h3>{{ todo.task }}</h3>
+                    <div>
+                        <button @click="deleteTodo(todo.id)" class="delete">DELETE</button>
+                        <button @click="startEditTodo(todo.id)" class="edit">EDIT</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </body>
+</html>

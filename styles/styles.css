@@ -1,0 +1,119 @@
+html {
+    --normal-font: 'Raleway';
+    --header-font: 'Kanit'
+}
+body {
+    background-color: rgb(198 203 233);
+    color: #744372;
+    box-sizing: border-box;
+}
+main {
+    width: 50%;
+    min-width: 40rem;
+    max-width: 60rem;
+    margin: auto;
+    text-align: center;
+}
+article {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    font-family: var(--header-font), sans-serif;
+    height: 7rem;
+}
+article h3 {
+    width: 60%;
+    max-width: 40rem;
+    margin: auto 0;
+}
+article button {
+    height: 2rem;
+}
+h3 {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 0;
+}
+article form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 35rem;
+    max-width: 60rem;
+    margin: auto;
+    text-align: center;
+}
+article form textarea {
+    height: 2rem;
+    margin: auto 0;
+    width: 16rem;
+}
+section, article {
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 0.5rem 1.25rem 0.75rem 1.25rem;
+    border-radius: 6px;
+}
+article div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+button {
+    background-color: rgb(70, 0, 162);
+    font-family: var(--header-font);
+    color: white;
+    border: none;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 5rem;
+}
+button:hover,
+button:active {
+    background-color: rgb(64, 0, 147);
+}
+.delete {
+    background-color: rgb(37, 0, 122);
+}
+.delete:hover,
+.delete:active {
+    background-color: rgb(39, 0, 132);
+}
+#todo-input {
+    width: 70%;
+    max-width: 30rem;
+    margin: 2rem auto;
+    border-radius: 6px;
+    background-color: #9c95ff;
+}
+#todo-input form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#todo-input form button {
+    margin: auto;
+}
+label {
+    font-family: var(--normal-font);
+    font-weight: 700;
+}
+textarea {
+    resize: none;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.25rem;
+    font-family: var(--header-font);
+    font-weight: 300;
+    font-size: 0.75rem;
+    border: 1px solid rgb(196, 196, 196);
+}
+textarea:focus {
+    outline: none;
+    background-color: rgb(242, 243, 255);
+}
