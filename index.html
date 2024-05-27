@@ -12,7 +12,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/styles//styles.css" />
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="/scripts/app.js" defer></script>
     </head>
     <body>
@@ -30,12 +30,19 @@
                 </form>
             </section>
             <div id="tasks-container">
-                <p v-if="todos.length === 0">You have no tasks yet. Please add new task</p>
+                <p v-if="todos.length === 0 && !isLoading">
+                    You have no tasks yet. Please add new task
+                </p>
+                <p v-else-if="isLoading">Loading...</p>
                 <article v-else v-for="todo in todos">
                     <h3>{{ todo.task }}</h3>
                     <div>
-                        <button @click="deleteTodo(todo.id)" class="delete">DELETE</button>
-                        <button @click="startEditTodo(todo.id)" class="edit">EDIT</button>
+                        <button @click="deleteTodo(todo.id)" class="delete">
+                            DELETE
+                        </button>
+                        <button @click="startEditTodo(todo.id)" class="edit">
+                            EDIT
+                        </button>
                     </div>
                 </article>
             </div>
